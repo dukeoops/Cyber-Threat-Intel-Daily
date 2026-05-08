@@ -8,6 +8,7 @@
 
 ---
 
+
 ## 简介
 
 **Cyber Threat Intel Daily** 是一个开箱即用的网络安全威胁情报日报自动化框架，帮助安全团队每日汇聚来自全球 13+ 权威安全媒体的最新情报，结合 AI 分析，生成结构化的专业日报并通过邮件分发。
@@ -23,8 +24,10 @@
 
 ---
 ## 报告示例
-
-
+<img width="906" height="594" alt="1" src="https://github.com/user-attachments/assets/8e5f00a5-afe8-4bb0-b4e1-6502e05ec109" />
+<img width="899" height="496" alt="2" src="https://github.com/user-attachments/assets/ef5c14e8-6353-4d4f-900d-d883cf738257" />
+<img width="894" height="637" alt="3" src="https://github.com/user-attachments/assets/3e91abf8-dbc2-4af4-8103-5fc1e0a0eb14" />
+<img width="901" height="691" alt="4" src="https://github.com/user-attachments/assets/303dd92e-9a97-49bd-a4ef-9bf8ba496b50" />
 ## 快速开始
 
 ### 1. 克隆项目
