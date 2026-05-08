@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>网络安全威胁情报日报 — 2026年04月27日</title>
+  <style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei',
+               'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  line-height: 1.7;
+  padding: 20px;
+  font-size: 15px;
+}
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── 页头 ── */
+.report-header {
+  background: linear-gradient(135deg, #c0392b 0%, #8e1a12 100%);
+  color: white;
+  border-radius: 14px;
+  padding: 30px 36px 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(192,57,43,0.35);
+  position: relative;
+  overflow: hidden;
+}
+.report-header::before {
+  content: '';
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 200px; height: 200px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+}
+.report-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.report-header .meta {
+  font-size: 13px;
+  opacity: 0.85;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.tlp-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ── 目录 ── */
+.toc-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  border-left: 4px solid #c0392b;
+}
+.toc-card h2 { font-size: 15px; color: #666; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; border: none; }
+.toc-list { list-style: none; }
+.toc-list li { padding: 4px 0; }
+.toc-list a { color: #c0392b; text-decoration: none; font-size: 14px; }
+.toc-list a:hover { text-decoration: underline; }
+
+/* ── 内容卡片 ── */
+.content-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+/* ── 标题层级 ── */
+h1 { font-size: 22px; color: #1a1a2e; margin: 20px 0 12px; }
+h2 {
+  font-size: 18px; color: #1a1a2e;
+  border-bottom: 2px solid #f0f2f5;
+  padding-bottom: 10px;
+  margin: 20px 0 14px;
+  display: flex; align-items: center; gap: 8px;
+}
+h3 { font-size: 15px; color: #374151; margin: 16px 0 10px; }
+h4 { font-size: 14px; color: #4b5563; margin: 12px 0 8px; }
+h5, h6 { font-size: 13px; color: #6b7280; margin: 10px 0 6px; }
+
+/* ── 段落与内联 ── */
+p { margin-bottom: 10px; color: #374151; }
+strong { color: #1a1a2e; }
+em { color: #6b7280; }
+a { color: #c0392b; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code {
+  background: #f3f4f6;
+  color: #dc2626;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px;
+}
+pre {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+pre code { background: none; color: inherit; padding: 0; }
+
+/* ── 列表 ── */
+.md-list {
+  padding-left: 22px;
+  margin: 8px 0 12px;
+  color: #374151;
+}
+.md-list li {
+  margin-bottom: 6px;
+  line-height: 1.65;
+}
+
+/* ── 表格 ── */
+.table-wrapper { overflow-x: auto; margin: 12px 0 16px; border-radius: 8px; border: 1px solid #e5e7eb; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead { background: #fef2f2; }
+th {
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  color: #991b1b;
+  border-bottom: 2px solid #fecaca;
+  white-space: nowrap;
+}
+td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #fafafa; }
+
+/* ── 分隔线 ── */
+hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 20px 0;
+}
+
+/* ── 引用块 ── */
+blockquote {
+  border-left: 4px solid #fca5a5;
+  background: #fef2f2;
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 12px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ── 徽章 ── */
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-critical { background: #fee2e2; color: #991b1b; }
+.badge-high     { background: #ffedd5; color: #9a3412; }
+.badge-medium   { background: #fef9c3; color: #854d0e; }
+.badge-low      { background: #dcfce7; color: #166534; }
+.cve-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: monospace;
+  border: 1px solid #fde68a;
+}
+
+/* ── 页脚 ── */
+.report-footer {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 12px;
+  padding: 20px 0 10px;
+}
+.report-footer a { color: #9ca3af; }
+
+/* ── 打印 ── */
+@media print {
+  body { background: white; padding: 0; }
+  .content-card { box-shadow: none; border: 1px solid #e5e7eb; }
+  .report-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <div class="report-header">
+    <h1>🔴 网络安全威胁情报日报</h1>
+    <div class="meta">
+      <span>📅 2026年04月27日</span>
+      <span class="tlp-badge">TLP: WHITE</span>
+      <span>⏱ 生成时间：2026-04-27 10:04:15</span>
+    </div>
+  </div>
+
+  <div class="toc-card">
+  <h2>📋 目录</h2>
+  <ul class="toc-list">
+    <li><a href="#一高优先级威胁预警">一、高优先级威胁预警</a></li>
+<li><a href="#二漏洞与补丁情报">二、漏洞与补丁情报</a></li>
+<li><a href="#三勒索软件与-apt-活动">三、勒索软件与 APT 活动</a></li>
+<li><a href="#四数据泄露与隐私安全">四、数据泄露与隐私安全</a></li>
+<li><a href="#五供应链与软件安全">五、供应链与软件安全</a></li>
+<li><a href="#六政策监管与执法动态">六、政策监管与执法动态</a></li>
+<li><a href="#七其他值得关注的情报">七、其他值得关注的情报</a></li>
+<li><a href="#八防御建议摘要">八、防御建议摘要</a></li>
+<li><a href="#九情报来源统计">九、情报来源统计</a></li>
+
+  </ul>
+</div>
+
+
+  <div class="content-card">
+    <p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<p>🔴 网络安全威胁情报日报</p>
+<p>2026年04月27日（周一）| TLP: WHITE</p>
+<p>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</p>
+<br>
+<p><strong>【执行摘要】</strong></p>
+<br>
+<p>今日情报以内部威胁与数据安全事件为主基调。GPU-Z 工具曝出本地权限提升严重漏洞，全球数亿 PC 用户面临被攻击者利用该工具获取系统最高权限的风险，建议立即停止使用未更新版本。国内一起&quot;删库&quot;刑事判决引发广泛关注——工程师违规删除89TB AI训练数据并获刑5年，警示企业须强化特权账户管理与数据备份机制。另有一起公安内部人员非法倒卖个人信息的执法案件，提示身份核验与访问审计的重要性。开源软件许可证合规（Cal.com放弃AGPL）与AI基础设施安全（Google Cloud Next全面AI化）亦在业界引发讨论。勒索软件情报今日受网络限制暂不可用。</p>
+<br>
+<p><strong>【威胁态势评级】</strong>：<span class="badge badge-high">🟠 中高</span></p>
+<br>
+<hr>
+<br>
+<h2 id="一高优先级威胁预警">一、高优先级威胁预警</h2>
+<br>
+<h3 id="gpuz-存在严重本地权限提升漏洞">🚨 GPU-Z 存在严重本地权限提升漏洞</h3>
+<br>
+<ul class="md-list">
+  <li><strong>威胁类型</strong>：本地权限提升漏洞（Local Privilege Escalation）</li>
+  <li><strong>受影响目标</strong>：全球个人 PC 用户、企业终端（所有安装 GPU-Z 的 Windows 系统）</li>
+  <li><strong>CVE 编号</strong>：暂未获得官方 CVE 编号（待确认）</li>
+  <li><strong>严重程度</strong>：高危（可获取系统最高权限）</li>
+  <li><strong>当前状态</strong>：已披露，PoC 状态待确认，补丁状态未知</li>
+  <li><strong>详情</strong>：安全研究员 Impulsive 披露，全球 PC 用户广泛使用的硬件监控工具 GPU-Z 存在严重安全漏洞，攻击者可利用该漏洞获取系统最高权限（System/SYSTEM 级别）。GPU-Z 是 TechPowerUp 开发的免费 GPU 信息及监控工具，在游戏玩家、超频爱好者及IT运维人员中使用极为普遍，攻击面广泛。</li>
+  <li><strong>建议行动</strong>：</li>
+</ul>
+<ol class="md-list">
+  <li>立即检查企业终端/个人主机中是否安装 GPU-Z</li>
+  <li>暂停使用 GPU-Z 直至官方发布修复版本</li>
+  <li>关注 TechPowerUp 官方安全公告</li>
+  <li>检测终端 EDR/AV 产品是否对相关利用行为有检测覆盖</li>
+</ol>
+<ul class="md-list">
+  <li><strong>情报来源</strong>：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&amp;mid=2652076007&amp;idx=3&amp;sn=7b7cd810015615c15d6232964cb06d5f" target="_blank">安全圈</a></li>
+  <li><strong>可信度评估</strong>：B（知名安全媒体报道，原始 CVE 和PoC 状态待官方确认）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h3 id="北京科技公司工程师删库致89tb-ai数据毁损获刑5年">🚨 北京科技公司工程师&quot;删库&quot;致89TB AI数据毁损，获刑5年</h3>
+<br>
+<ul class="md-list">
+  <li><strong>威胁类型</strong>：内部威胁（Insider Threat）/ 破坏性数据删除</li>
+  <li><strong>受影响目标</strong>：企业 AI 研发团队、高价值训练数据资产</li>
+  <li><strong>CVE 编号</strong>：不适用（刑事案件）</li>
+  <li><strong>严重程度</strong>：高危（不可逆数据损失，业务完全中断）</li>
+  <li><strong>当前状态</strong>：已定罪，判决已生效</li>
+  <li><strong>详情</strong>：2024年9月，北京市东城区某科技公司算法工程师王某，为私自使用公司算力资源与外部人员合谋&quot;干私活&quot;，违规登录公司服务器集群，执行强制删除命令（<code>rm -rf</code> 级别无确认删除），在单夜删除公司 AI 游戏部门超过 <strong>89TB 训练数据</strong>及多个自研文生3D AI 模型，造成 AI 模型训练系统瘫痪、研发项目全线停摆，经济损失逾20余万元。法院以破坏计算机信息系统罪判处有期徒刑5年。</li>
+  <li><strong>对企业的警示</strong>：</li>
+</ul>
+<ol class="md-list">
+  <li>特权账户最小权限原则落地执行，严格限制删除命令权限</li>
+  <li>关键数据需建立离线/异地备份，且定期演练恢复</li>
+  <li>异常操作行为须有实时告警机制（大批量删除触发告警）</li>
+  <li>算力资源访问须有审批与审计日志</li>
+</ol>
+<ul class="md-list">
+  <li><strong>情报来源</strong>：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&amp;mid=2652076007&amp;idx=1&amp;sn=6a6eff1e09bd7d67b20d20ee06a2fd39" target="_blank">安全圈</a></li>
+  <li><strong>可信度评估</strong>：A（刑事判决，官方司法记录）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="二漏洞与补丁情报">二、漏洞与补丁情报</h2>
+<br>
+<div class="table-wrapper"><table>
+<thead><tr><th>CVE 编号</th><th>受影响产品</th><th>严重程度</th><th>利用状态</th><th>补丁状态</th><th>来源</th></tr></thead>
+<tbody>
+<tr><td>待分配</td><td>GPU-Z（TechPowerUp）</td><td>高危</td><td>PoC披露/待确认</td><td>未知</td><td>安全圈</td></tr>
+</tbody>
+</table></div>
+<br>
+<p><strong>重点分析</strong></p>
+<br>
+<p><strong>GPU-Z 权限提升漏洞</strong>：GPU-Z 是一款运行在 Windows 上的 GPU 硬件信息工具，因需要访问底层硬件寄存器，通常以较高权限运行或安装内核驱动。此类工具历史上曾多次因驱动层漏洞被用于 LPE（本地权限提升）攻击，典型手法包括驱动中的 IOCTL 处理不当、内存映射越界写入等。由于 GPU-Z 在企业 IT 和游戏机器上的高普及率，该漏洞具备较大的横向利用价值，攻击者在获得低权限代码执行后可借此完成提权。建议安全团队在 TechPowerUp 发布官方修复版本前，优先评估内部终端的安装情况并纳入资产管理台账。</p>
+<br>
+<hr>
+<br>
+<h2 id="三勒索软件与-apt-活动">三、勒索软件与 APT 活动</h2>
+<br>
+<h3 id="本日活跃勒索组织">本日活跃勒索组织</h3>
+<br>
+<div class="table-wrapper"><table>
+<thead><tr><th>组织名称</th><th>受害者</th><th>行业/地区</th><th>要求赎金</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</tbody>
+</table></div>
+<br>
+<blockquote>⚠️ <strong>数据获取受限</strong>：0.zone 勒索情报平台今日数据因网络限制无法获取，表格暂无数据。建议手动访问 <a href="https://0.zone" target="_blank">https://0.zone</a> 核查最新勒索组织动态。</blockquote>
+<h3 id="apt-活动追踪">APT 活动追踪</h3>
+<br>
+<p>今日暂无相关 APT 活动情报。建议持续关注 CISA、Microsoft MSTIC、Mandiant 等机构的 APT 追踪公告。</p>
+<br>
+<hr>
+<br>
+<h2 id="四数据泄露与隐私安全">四、数据泄露与隐私安全</h2>
+<br>
+<h3 id="公安内部人员非法倒卖个人信息案">公安内部人员非法倒卖个人信息案</h3>
+<br>
+<ul class="md-list">
+  <li><strong>事件类型</strong>：内部人员滥用权限导致个人信息泄露</li>
+  <li><strong>当前状态</strong>：已定罪（刑事判决）</li>
+  <li><strong>详情</strong>：公安局工作人员王某为牟利，与外部人员董某合谋，多次以&quot;办案&quot;为由利用公安民警数字证书违规查询公民信息，并将银行卡相关个人信息出售牟利，已被追究刑事责任。</li>
+  <li><strong>行业警示</strong>：具备高权限查询能力的系统用户（公安、金融、电信等）是数据泄露的高危节点，需强化操作日志审计、异常查询模式识别及账号实名绑定机制。</li>
+  <li><strong>情报来源</strong>：<a href="https://mp.weixin.qq.com/s?__biz=MzIzMzE4NDU1OQ==&amp;mid=2652076007&amp;idx=2&amp;sn=09ae1d9ef07438cdb39cedb748421211" target="_blank">安全圈</a></li>
+  <li><strong>可信度评估</strong>：A（司法执法案件，已判决）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="五供应链与软件安全">五、供应链与软件安全</h2>
+<br>
+<h3 id="calcom-放弃-agpl30-开源许可证商业闭源引发开源社区震动">Cal.com 放弃 AGPL-3.0 开源许可证，商业闭源引发开源社区震动</h3>
+<br>
+<ul class="md-list">
+  <li><strong>事件类型</strong>：开源许可证合规与供应链治理</li>
+  <li><strong>详情</strong>：开源日历调度工具 Cal.com 宣布关闭其商业代码库，放弃多年坚持的 AGPL-3.0 许可证，此举引发了参与该项目开发的开发者社区的广泛告警，并在开源生态中产生连锁反应。此事件提示企业在选用开源组件时须评估许可证变更风险，尤其是 AGPL 类许可证在商业闭源场景下的合规风险。</li>
+  <li><strong>安全视角</strong>：许可证变更可能迫使企业迅速迁移，增加引入未经充分审计的替代组件的风险；同时，社区维护力量减弱可能导致安全漏洞响应周期延长。</li>
+  <li><strong>情报来源</strong>：<a href="https://go.theregister.com/feed/www.theregister.com/2026/04/26/opinion_column/" target="_blank">The Register</a></li>
+  <li><strong>可信度评估</strong>：B（知名 IT 媒体）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="六政策监管与执法动态">六、政策监管与执法动态</h2>
+<br>
+<h3 id="ai-安全立法与合规趋势google-cloud-next-全面-ai-化">AI 安全立法与合规趋势：Google Cloud Next 全面 AI 化</h3>
+<br>
+<ul class="md-list">
+  <li><strong>事件背景</strong>：据 The Register 报道，Google Cloud Next 2026 已全面以 AI 为核心，会议揭示了 AI 正在全面渗透云基础设施、开发工具和安全产品的趋势，包括&quot;Mythos&quot;相关项目的最新披露。</li>
+  <li><strong>安全合规关注点</strong>：随着 AI 能力深度集成进云安全产品，企业需关注：AI 决策透明度、AI 训练数据安全、AI 供应链安全（模型来源、微调数据污染）以及合规审计能力建设。</li>
+  <li><strong>情报来源</strong>：<a href="https://go.theregister.com/feed/www.theregister.com/2026/04/27/google<em>cloud</em>next<em>proves</em>what/" target="_blank">The Register</a></li>
+</ul>
+<br>
+<p>今日暂无 CISA 公告及其他监管机构执法动态（CISA RSS 暂时返回404，建议直接访问 <a href="https://www.cisa.gov" target="_blank">https://www.cisa.gov</a> 获取最新公告）。</p>
+<br>
+<hr>
+<br>
+<h2 id="七其他值得关注的情报">七、其他值得关注的情报</h2>
+<br>
+<h3 id="美国白宫记者晚宴疑似枪击事件物理安全参考">美国白宫记者晚宴疑似枪击事件（物理安全参考）</h3>
+<br>
+<ul class="md-list">
+  <li><strong>事件摘要</strong>：一名31岁的加州工程师（自称独立游戏开发者）被认定为白宫记者晚宴期间疑似枪击事件嫌疑人，该晚宴出席者包括总统特朗普及多名媒体与政府官员。</li>
+  <li><strong>安全视角</strong>：此事件不涉及网络安全，但提醒安全团队关注物理安全威胁与高价值目标保护，以及技术背景人员执行此类事件的社会工程学风险评估。</li>
+  <li><strong>情报来源</strong>：<a href="https://www.wired.com/story/california-engineer-identified-in-suspected-shooting-at-white-house-correspondents-dinner/" target="_blank">Wired Security</a></li>
+  <li><strong>可信度评估</strong>：B（Wired，知名科技媒体，疑似标注，非最终认定）</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="八防御建议摘要">八、防御建议摘要</h2>
+<br>
+<h3 id="立即行动24小时内">🔴 立即行动（24小时内）</h3>
+<br>
+<ul class="md-list">
+  <li><strong>GPU-Z 漏洞响应</strong>：盘查企业内所有安装 GPU-Z 的终端，评估版本，暂停使用直至官方补丁发布；确认 EDR 产品是否有覆盖检测能力</li>
+  <li><strong>特权账户审计</strong>：复查具备批量数据删除权限的账户列表，确认最小权限原则落地，收紧危险命令（<code>rm -rf</code>、<code>DROP TABLE</code> 等）的执行权限</li>
+</ul>
+<br>
+<h3 id="近期跟进本周内">🟠 近期跟进（本周内）</h3>
+<br>
+<ul class="md-list">
+  <li><strong>数据备份验证</strong>：对 AI 训练数据、核心研发数据等高价值资产执行一次备份可用性验证演练</li>
+  <li><strong>内部威胁检测规则</strong>：新增/审查 SIEM 规则，对大批量删除操作（如单次删除 &gt;1GB 数据）触发告警</li>
+  <li><strong>开源组件许可证审计</strong>：检查项目中依赖 AGPL/GPL 类许可证的开源组件，评估许可证变更风险</li>
+  <li><strong>0.zone 手动核查</strong>：手动访问 <a href="https://0.zone" target="_blank">https://0.zone</a> 补充今日勒索情报盲区</li>
+</ul>
+<br>
+<h3 id="持续监控">🟡 持续监控</h3>
+<br>
+<ul class="md-list">
+  <li><strong>GPU-Z CVE 追踪</strong>：关注 NVD、TechPowerUp 官网的漏洞公告，及时获取官方 CVE 编号和修复版本</li>
+  <li><strong>CISA 公告恢复监控</strong>：CISA RSS Feed 当前返回404，建议直接订阅邮件列表或 CISA.gov 官网</li>
+  <li><strong>AI 基础设施供应链</strong>：关注 AI 训练框架（PyTorch、TensorFlow）及云 AI 服务（Google Vertex AI 等）的安全公告</li>
+  <li><strong>勒索软件情报</strong>：0.zone 网络恢复后补充本日情报；关注 RaaS 组织对制造业、医疗业的针对性攻击</li>
+</ul>
+<br>
+<hr>
+<br>
+<h2 id="九情报来源统计">九、情报来源统计</h2>
+<br>
+<div class="table-wrapper"><table>
+<thead><tr><th>来源</th><th>类型</th><th>本日文章数</th><th>状态</th></tr></thead>
+<tbody>
+<tr><td>安全圈（微信公众号）</td><td>中文安全媒体</td><td>3</td><td>✅ 正常</td></tr>
+<tr><td>The Register</td><td>英文 IT 媒体</td><td>2</td><td>✅ 正常</td></tr>
+<tr><td>Wired Security</td><td>英文科技媒体</td><td>1</td><td>✅ 正常</td></tr>
+<tr><td>看雪论坛</td><td>技术论坛</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>FreeBuf</td><td>中文安全媒体</td><td>0</td><td>❌ XML 解析错误</td></tr>
+<tr><td>嗅学安全</td><td>中文安全媒体</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>Krebs on Security</td><td>英文博客</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>Dark Reading</td><td>英文媒体</td><td>0</td><td>❌ HTTP 403</td></tr>
+<tr><td>Schneier on Security</td><td>英文博客</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>CISA</td><td>官方机构</td><td>0</td><td>❌ HTTP 404</td></tr>
+<tr><td>Ars Technica Security</td><td>英文媒体</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>Microsoft Security</td><td>官方博客</td><td>0</td><td>⚠️ 无新内容</td></tr>
+<tr><td>0.zone（勒索情报）</td><td>专项情报平台</td><td>0</td><td>❌ 网络受限</td></tr>
+</tbody>
+</table></div>
+<br>
+<blockquote><strong>数据说明</strong>：本日共采集有效情报 6 条（去重前），其中 3 个来源因网络限制或 Feed 变更导致数据不可用，勒索情报因网络限制暂缺失。RSS 覆盖异常已记录，建议运维侧跟进 CISA Feed URL 变更问题。</blockquote>
+<hr>
+<br>
+<p><em>TLP: WHITE — 本报告可自由分享</em></p>
+<p><em>生成时间：2026-04-27 10:01 CST</em></p>
+<p><em>数据来源：自动化抓取（13+ RSS 订阅源 + 0.zone）+ AI 情报分析</em></p>
+<p><em>报告版本：v1.0 | 分析师：AI CTI Agent</em></p>
+<br>
+
+  </div>
+
+  <div class="report-footer">
+    <p>TLP: WHITE — 本报告可自由分享 &nbsp;|&nbsp; 数据来源：自动化抓取 + AI 分析整合</p>
+    <p>报告生成时间：2026-04-27 10:04:15</p>
+  </div>
+
+</div>
+</body>
+</html>
