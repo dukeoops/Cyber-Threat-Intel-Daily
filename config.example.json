@@ -1,0 +1,28 @@
+{
+  "_comment": "复制此文件为 config.json，并填写你的实际配置",
+
+  "email": {
+    "smtp_host": "smtp.example.com",
+    "smtp_port": 587,
+    "smtp_use_tls": true,
+    "smtp_user": "your-sender@example.com",
+    "smtp_password": "your-smtp-password",
+    "sender_name": "CTI Daily Report",
+    "recipients": [
+      "security-team@example.com"
+    ]
+  },
+
+  "report": {
+    "output_dir": "./output",
+    "title": "网络安全威胁情报日报",
+    "tlp_level": "WHITE",
+    "language": "zh"
+  },
+
+  "sources": {
+    "rss_enabled": true,
+    "ransomware_intel_enabled": true,
+    "custom_rss_feeds": []
+  }
+}
